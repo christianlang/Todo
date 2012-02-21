@@ -17,7 +17,7 @@
         public TodoItemViewModel(TodoItem item)
         {
             this.item = item;
-            //this.tags = item.Tags.Select(t => new TagViewModel(t)).ToList();
+            this.tags = item.Tags.Select(t => new TagViewModel(t)).ToList();
         }
 
         [Required]
