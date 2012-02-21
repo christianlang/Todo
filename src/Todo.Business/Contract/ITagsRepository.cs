@@ -2,7 +2,7 @@
 {
     using Todo.Entities;
 
-    public interface ITodoItemsRepository : IRepository<TodoItem>
+    public interface ITagsRepository : IRepository<Tag>
     {
     }
 }

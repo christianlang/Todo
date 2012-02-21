@@ -6,19 +6,19 @@
     using Todo.Data.Contract;
     using Todo.Entities;
 
-    public class TodoItemsRepository : RepositoryBase<TodoItem>, ITodoItemsRepository
+    public class TagsRepository : RepositoryBase<Tag>, ITagsRepository
     {
-        public TodoItemsRepository(IDataContext dataContext)
+        public TagsRepository(IDataContext dataContext)
             : base(dataContext)
         {
         }
 
-        public override IQueryable<TodoItem> FindAll()
+        public override IQueryable<Tag> FindAll()
         {
-            return this.DataContext.TodoItems;
+            return this.DataContext.Tags;
         }
 
-        public override TodoItem Find(int id)
+        public override Tag Find(int id)
         {
             return this.FindAll().FirstOrDefault(t => t.Id == id);
         }
