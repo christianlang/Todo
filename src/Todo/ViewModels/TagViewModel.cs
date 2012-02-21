@@ -1,30 +1,39 @@
 ﻿namespace Todo.ViewModels
 {
+    using System;
+
     using Caliburn.Micro;
 
     using Todo.Entities;
 
     public class TagViewModel : PropertyChangedBase
     {
-        private readonly Tag tag;
-
         public TagViewModel(Tag tag)
         {
-            this.tag = tag;
+            this.Tag = tag;
         }
+
+        public Tag Tag { get; private set; }
+
+        public event EventHandler OnRemove;
 
         public string Text
         {
             get
             {
-                return this.tag.Text;
+                return this.Tag.Text;
             }
 
             set
             {
-                this.tag.Text = value;
+                this.Tag.Text = value;
                 NotifyOfPropertyChange(() => Text);
             }
+        }
+
+        public void Remove()
+        {
+            if (OnRemove != null) OnRemove(this, EventArgs.Empty);
         }
     }
 }

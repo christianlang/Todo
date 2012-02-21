@@ -2,12 +2,32 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:Views="clr-namespace:Todo.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <StackPanel Orientation="Horizontal">
-        <TextBox Name="Text" FontSize="20" />
-        <DatePicker Name="DueDate" FontSize="14" />
-        <ItemsControl Name="Tags" />
-    </StackPanel>
+             d:DesignHeight="30" d:DesignWidth="300">
+    <Border CornerRadius="5" Padding="5,2">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFFFF"/>
+                <GradientStop Color="#F4F4F4" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <DockPanel>
+            <DatePicker Name="DueDate" FontSize="12" VerticalAlignment="Center" DockPanel.Dock="Right" Width="130" Margin="5,0,0,0" />
+            <ItemsControl Name="Tags" VerticalAlignment="Center" DockPanel.Dock="Right">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel.Resources>
+                                <Style TargetType="{x:Type Views:TagView}">
+                                    <Setter Property="Margin" Value="7,0,0,0"/>
+                                </Style>
+                            </StackPanel.Resources>
+                        </StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+            <TextBox Name="Text" FontSize="12" VerticalAlignment="Center" />
+        </DockPanel>
+    </Border>
 </UserControl>

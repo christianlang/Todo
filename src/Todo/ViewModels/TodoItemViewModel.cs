@@ -12,12 +12,29 @@
     public class TodoItemViewModel : PropertyChangedBase
     {
         private readonly TodoItem item;
-        private readonly IList<TagViewModel> tags;
+        private readonly IObservableCollection<TagViewModel> tags;
         
         public TodoItemViewModel(TodoItem item)
         {
             this.item = item;
-            this.tags = item.Tags.Select(t => new TagViewModel(t)).ToList();
+
+            this.tags = new BindableCollection<TagViewModel>();
+            foreach (var tag in item.Tags)
+            {
+                var model = new TagViewModel(tag);
+                this.tags.Add(model);
+                model.OnRemove += OnRemoveTag;
+            }
+        }
+
+        private void OnRemoveTag(object sender, EventArgs eventArgs)
+        {
+            var tag = sender as TagViewModel;
+            if (tag != null && this.tags.Contains(tag))
+            {
+                this.tags.Remove(tag);
+                this.item.Tags.Remove(tag.Tag);
+            }
         }
 
         [Required]
@@ -39,7 +56,7 @@
             set { this.item.DueDate = value; }
         }
 
-        public IList<TagViewModel> Tags
+        public IObservableCollection<TagViewModel> Tags
         {
             get { return this.tags; }
         }
