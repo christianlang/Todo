@@ -38,12 +38,6 @@
             set { this.item.Text = value; }
         }
 
-        public string Note
-        {
-            get { return this.item.Note; }
-            set { this.item.Note = value; }
-        }
-
         public DateTime? DueDate
         {
             get { return this.item.DueDate; }

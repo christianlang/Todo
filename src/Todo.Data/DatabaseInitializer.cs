@@ -22,7 +22,6 @@
                     {
                         Id = 2,
                         Text = "Zweite Aufgabe mit Notiz",
-                        Note = "Die Notiz (2).", 
                         Tags = new[] { new Tag { Text = "Bewerbung" }, new Tag { Text = "Privat" } }
                     });
             context.TodoItems.Add(

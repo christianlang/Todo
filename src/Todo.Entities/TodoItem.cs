@@ -13,8 +13,6 @@
 
         public bool Done { get; set; }
 
-        public string Note { get; set; }
-
         public DateTime? DueDate { get; set; }
 
         public virtual ICollection<Tag> Tags { get; set; }
