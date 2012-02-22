@@ -45,5 +45,10 @@
                 NotifyOfPropertyChange(() => TodoItems);
             }
         }
+
+        public void Save()
+        {
+            this.repository.Save();
+        }
     }
 }
