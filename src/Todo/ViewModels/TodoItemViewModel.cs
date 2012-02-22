@@ -37,6 +37,12 @@
             }
         }
 
+        public bool Done
+        {
+            get { return this.item.Done; }
+            set { this.item.Done = value; }
+        }
+
         [Required]
         public string Text
         {
