@@ -1,4 +1,5 @@
-﻿namespace Todo {
+﻿namespace Todo
+{
     using Todo.ViewModels;
 
     public interface IShell

@@ -1,10 +1,8 @@
 ﻿namespace Todo.ViewModels
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Linq;
-
+    
     using Caliburn.Micro;
 
     using Todo.Entities;
@@ -23,17 +21,7 @@
             {
                 var model = new TagViewModel(tag);
                 this.tags.Add(model);
-                model.OnRemove += OnRemoveTag;
-            }
-        }
-
-        private void OnRemoveTag(object sender, EventArgs eventArgs)
-        {
-            var tag = sender as TagViewModel;
-            if (tag != null && this.tags.Contains(tag))
-            {
-                this.tags.Remove(tag);
-                this.item.Tags.Remove(tag.Tag);
+                model.OnRemove += this.OnRemoveTag;
             }
         }
 
@@ -65,6 +53,16 @@
         public IObservableCollection<TagViewModel> Tags
         {
             get { return this.tags; }
+        }
+
+        private void OnRemoveTag(object sender, EventArgs eventArgs)
+        {
+            var tag = sender as TagViewModel;
+            if (tag != null && this.tags.Contains(tag))
+            {
+                this.tags.Remove(tag);
+                this.item.Tags.Remove(tag.Tag);
+            }
         }
     }
 }

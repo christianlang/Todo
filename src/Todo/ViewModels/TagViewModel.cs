@@ -13,9 +13,9 @@
             this.Tag = tag;
         }
 
-        public Tag Tag { get; private set; }
-
         public event EventHandler OnRemove;
+
+        public Tag Tag { get; private set; }
 
         public string Text
         {

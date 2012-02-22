@@ -20,16 +20,9 @@
             this.repository = repository;
             this.filterService = filterService;
 
-            this.filterService.FilterChanged += FilterServiceOnFilterChanged;
+            this.filterService.FilterChanged += this.OnFilterChanged;
 
             this.filterService.FilterOptions = FilterOptions.All;
-        }
-
-        private void FilterServiceOnFilterChanged(object sender, EventArgs eventArgs)
-        {
-            this.TodoItems =
-                this.repository.FindAll().Where(this.filterService.GetFilterPredicate()).ToList().Select(
-                    t => new TodoItemViewModel(t)).ToList();
         }
 
         public IList<TodoItemViewModel> TodoItems
@@ -49,6 +42,13 @@
         public void Save()
         {
             this.repository.Save();
+        }
+
+        private void OnFilterChanged(object sender, EventArgs eventArgs)
+        {
+            this.TodoItems =
+                this.repository.FindAll().Where(this.filterService.GetFilterPredicate()).ToList().Select(
+                    t => new TodoItemViewModel(t)).ToList();
         }
     }
 }

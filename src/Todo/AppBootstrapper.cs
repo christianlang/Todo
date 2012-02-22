@@ -9,14 +9,14 @@
 
     public class AppBootstrapper : Bootstrapper<IShell>
     {
-        IUnityContainer container;
+        private IUnityContainer container;
 
         /// <summary>
         /// Configure to use Unity. 
         /// </summary>
         protected override void Configure()
         {
-            container = new UnityContainer()
+            this.container = new UnityContainer()
                 .LoadConfiguration();
         }
 
@@ -32,7 +32,7 @@
 
         protected override void BuildUp(object instance)
         {
-            container.BuildUp(instance);
+            this.container.BuildUp(instance);
         }
     }
 }

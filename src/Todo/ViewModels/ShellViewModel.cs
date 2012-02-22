@@ -1,4 +1,5 @@
-﻿namespace Todo.ViewModels {
+﻿namespace Todo.ViewModels
+{
     public class ShellViewModel : IShell
     {
         public ShellViewModel(TodoListViewModel todoList, FilterViewModel filter)
