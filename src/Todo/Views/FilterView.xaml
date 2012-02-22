@@ -4,14 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <StackPanel Orientation="Horizontal" MinHeight="35">
-    	<StackPanel.Background>
-    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-    			<GradientStop Color="#FF636363"/>
-    			<GradientStop Color="#FF404040" Offset="1"/>
-    		</LinearGradientBrush>
-    	</StackPanel.Background>
+             d:DesignHeight="25" d:DesignWidth="500" MinHeight="35">
+    <UserControl.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF636363"/>
+            <GradientStop Color="#FF404040" Offset="1"/>
+        </LinearGradientBrush>
+    </UserControl.Background>
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel.Resources>
+            <Style TargetType="{x:Type RadioButton}">
+                <Setter Property="Margin" Value="5,0"/>
+            </Style>
+        </StackPanel.Resources>
         <RadioButton Content="All" Name="All" />
         <RadioButton Content="Today" Name="Today" />
         <RadioButton Content="Tomorrow" Name="Tomorrow" />
