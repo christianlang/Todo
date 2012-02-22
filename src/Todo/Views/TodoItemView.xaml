@@ -15,7 +15,7 @@
         </Border.Background>
         <i:Interaction.Triggers>
             <i:EventTrigger EventName="LostFocus">
-                <cal:ActionMessage MethodName="Save" />
+                <cal:ActionMessage MethodName="SaveTodoList" />
             </i:EventTrigger>
         </i:Interaction.Triggers>
         <DockPanel>
@@ -27,7 +27,7 @@
                         <StackPanel Orientation="Horizontal">
                             <StackPanel.Resources>
                                 <Style TargetType="{x:Type Views:TagView}">
-                                    <Setter Property="Margin" Value="7,0,0,0"/>
+                                    <Setter Property="Margin" Value="6,0,0,0"/>
                                 </Style>
                             </StackPanel.Resources>
                         </StackPanel>

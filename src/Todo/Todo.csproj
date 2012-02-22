@@ -75,6 +75,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModels\FilterViewModel.cs" />
+    <Compile Include="ViewModels\NewTodoItemViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="IShell.cs" />
@@ -82,6 +83,10 @@
     <Compile Include="ViewModels\TodoItemViewModel.cs" />
     <Compile Include="ViewModels\TodoListViewModel.cs" />
     <Page Include="Views\FilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewTodoItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

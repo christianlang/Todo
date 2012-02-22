@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Todo.Views.NewTodoItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:Views="clr-namespace:Todo.Views"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:cal="http://www.caliburnproject.org" mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="300">
+    <Border CornerRadius="5" Padding="5,2" BorderThickness="1">
+        <Border.BorderBrush>
+            <SolidColorBrush Color="#222222" Opacity="0.35" />
+        </Border.BorderBrush>
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.27">
+                <GradientStop Color="#000000"/>
+                <GradientStop Color="#333333" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="KeyUp">
+                <cal:ActionMessage MethodName="AddNew">
+                    <cal:Parameter Value="$dataContext" />
+                    <cal:Parameter Value="$eventArgs" />
+                </cal:ActionMessage>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <DockPanel>
+            <DatePicker Name="DueDate" FontSize="12" VerticalAlignment="Center" DockPanel.Dock="Right" Width="130" Margin="5,0,0,0" />
+            <TextBox Name="Text" FontSize="12" VerticalAlignment="Center" BorderThickness="0" Background="Transparent" Foreground="White"/>
+        </DockPanel>
+    </Border>
+</UserControl>

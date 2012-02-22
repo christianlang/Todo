@@ -15,7 +15,7 @@
         {
             if (persistenceCapableObject == null)
                 throw new ArgumentNullException("persistenceCapableObject");
-
+            
             this.GetDbSet(persistenceCapableObject).Add(persistenceCapableObject);
         }
 
