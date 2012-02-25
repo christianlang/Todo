@@ -2,9 +2,11 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
-    
+    using System.Dynamic;
+
     using Caliburn.Micro;
 
+    using Todo.Business.Contract;
     using Todo.Entities;
 
     public class TodoItemViewModel : PropertyChangedBase
@@ -47,6 +49,15 @@
         public IObservableCollection<TagViewModel> Tags
         {
             get { return this.tags; }
+        }
+
+        public void AddTag()
+        {
+            dynamic settings = new ExpandoObject();
+            settings.StaysOpen = false;
+
+            var wm = new WindowManager();
+            wm.ShowPopup(new TagSearchViewModel(), null, settings);
         }
 
         private void OnRemoveTag(object sender, EventArgs eventArgs)

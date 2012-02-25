@@ -34,6 +34,7 @@
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
+            <Button Name="AddTag" DockPanel.Dock="Right">+</Button>
             <TextBox Name="Text" FontSize="12" VerticalAlignment="Center" />
         </DockPanel>
     </Border>
