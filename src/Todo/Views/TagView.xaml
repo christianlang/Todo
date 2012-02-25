@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="20" d:DesignWidth="100">
     <Border CornerRadius="7" BorderBrush="#9ACAE4" BorderThickness="1" Padding="5,0">
         <Border.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -14,7 +14,7 @@
         </Border.Background>
         <StackPanel Orientation="Horizontal">
             <TextBlock Name="Text" />
-            <Button Name="Remove">
+            <Button Name="RemoveTag">
                 <Button.Template>
                     <ControlTemplate>
                         <TextBlock FontSize="10" Padding="5,0,0,0">x</TextBlock>
