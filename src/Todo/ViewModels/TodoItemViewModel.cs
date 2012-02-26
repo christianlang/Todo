@@ -57,7 +57,7 @@
             settings.StaysOpen = false;
 
             var wm = new WindowManager();
-            wm.ShowPopup(new TagSearchViewModel(), null, settings);
+            wm.ShowWindow(new TagSearchViewModel(), null, settings);
         }
 
         private void OnRemoveTag(object sender, EventArgs eventArgs)
