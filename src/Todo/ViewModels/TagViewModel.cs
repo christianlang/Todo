@@ -31,7 +31,7 @@
             }
         }
 
-        public void Remove()
+        public void RemoveTag()
         {
             if (OnRemove != null) OnRemove(this, EventArgs.Empty);
         }

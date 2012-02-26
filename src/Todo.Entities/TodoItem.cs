@@ -15,6 +15,8 @@
 
         public DateTime? DueDate { get; set; }
 
+        public bool Deleted { get; set; }
+
         public virtual ICollection<Tag> Tags { get; set; }
     }
 }

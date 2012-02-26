@@ -48,16 +48,23 @@
             this.repository.Save();
         }
 
-        public void AddNew(NewTodoItemViewModel dataContext, KeyEventArgs e)
+        public void AddNewTodo(NewTodoItemViewModel model, KeyEventArgs e)
         {
-            if (e.Key == Key.Return && !string.IsNullOrWhiteSpace(dataContext.Text))
+            if (e.Key == Key.Return && !string.IsNullOrWhiteSpace(model.Text))
             {
-                var item = new TodoItem { Text = dataContext.Text, DueDate = dataContext.DueDate, Tags = new BindableCollection<Tag>() };
+                var item = new TodoItem { Text = model.Text, DueDate = model.DueDate, Tags = new BindableCollection<Tag>() };
                 this.TodoItems.Add(new TodoItemViewModel(item));
                 this.repository.Add(item);
                 this.repository.Save();
-                dataContext.Clear();
+                model.Clear();
             }
+        }
+
+        public void DeleteTodo(TodoItemViewModel model)
+        {
+            model.Deleted = true;
+            this.repository.Save();
+            this.todoItems.Remove(model);
         }
 
         private void OnFilterChanged(object sender, EventArgs eventArgs)

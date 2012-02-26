@@ -18,7 +18,7 @@
         </Border.Background>
         <i:Interaction.Triggers>
             <i:EventTrigger EventName="KeyUp">
-                <cal:ActionMessage MethodName="AddNew">
+                <cal:ActionMessage MethodName="AddNewTodo">
                     <cal:Parameter Value="$dataContext" />
                     <cal:Parameter Value="$eventArgs" />
                 </cal:ActionMessage>

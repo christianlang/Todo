@@ -42,7 +42,7 @@
                     return t => t.DueDate == tomorrow;
                 case FilterOptions.NextWeek:
                     var in7Days = DateTime.Today.AddDays(7);
-                    return t => t.DueDate <= in7Days;
+                    return t => t.DueDate >= DateTime.Today && t.DueDate <= in7Days;
                 case FilterOptions.Later:
                     var in8Days = DateTime.Today.AddDays(8);
                     return t => t.DueDate >= in8Days;

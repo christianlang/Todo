@@ -46,6 +46,12 @@
             set { this.item.DueDate = value; }
         }
 
+        public bool Deleted
+        {
+            get { return this.item.Deleted; }
+            set { this.item.Deleted = value; }
+        }
+
         public IObservableCollection<TagViewModel> Tags
         {
             get { return this.tags; }

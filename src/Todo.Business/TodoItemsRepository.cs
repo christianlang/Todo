@@ -15,7 +15,7 @@
 
         public override IQueryable<TodoItem> FindAll()
         {
-            return this.DataContext.TodoItems;
+            return this.DataContext.TodoItems.Where(t => !t.Deleted);
         }
 
         public override TodoItem Find(int id)
