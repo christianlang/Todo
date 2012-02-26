@@ -1,0 +1,5 @@
+This is a simple todo list written in C# for the .NET Framework 4.0. The WPF user interface is implemented using the MVVM pattern and Caliburn Micro. 
+
+Right now it's not possible to assign tags to todo items. The demo data has tags assigned that are visible and can also be deleted. But once deleted they cannot be reassigned. I'm currently working on that. 
+
+Todo items are persisted in a local SQL Server Compact 4.0 database using Entity Framework Code First. SQL Server Compact is an in-process database engine that requires no installation routine or any special privileges on the client. 
