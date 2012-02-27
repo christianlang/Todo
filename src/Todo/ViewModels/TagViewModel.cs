@@ -21,12 +21,12 @@
         {
             get
             {
-                return this.Tag.Text;
+                return this.Tag.Name;
             }
 
             set
             {
-                this.Tag.Text = value;
+                this.Tag.Name = value;
                 NotifyOfPropertyChange(() => Text);
             }
         }

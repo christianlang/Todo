@@ -3,17 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-             xmlns:cal="http://www.caliburnproject.org" mc:Ignorable="d" d:DesignHeight="80" d:DesignWidth="150">
-    <!--<i:Interaction.Triggers>
-        <i:EventTrigger EventName="LostFocus">
-            <cal:ActionMessage MethodName="Close">
-                <cal:Parameter Value="$view" />
-            </cal:ActionMessage>
-        </i:EventTrigger>
-    </i:Interaction.Triggers>-->
+             mc:Ignorable="d" d:DesignHeight="80" d:DesignWidth="150">
     <StackPanel MinWidth="150">
-        <TextBox Name="SearchText" TabIndex="0" />
-        <ListBox Name="TagSearchResult" />
+        <TextBox Name="SearchText" />
+        <ItemsControl Name="TagSearchResults" />
     </StackPanel>
 </UserControl>
