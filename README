@@ -1,3 +1,5 @@
 This is a simple todo list written in C# for the .NET Framework 4.0. The WPF user interface is implemented using the MVVM pattern and Caliburn Micro. 
 
+Caliburn Micro is following an convention over configuration approach. Views are automatically located by replacing "ViewModel" with "View" in the view model's class name and namespace. Bindings are automatically established between controls in the view and properties in the view model with the same name. 
+
 Todo items are persisted in a local SQL Server Compact 4.0 database using Entity Framework Code First. SQL Server Compact is an in-process database engine that requires no installation routine or any special privileges on the client. 
