@@ -1,4 +1,4 @@
-This is a simple todo list written in C# for the .NET Framework 4.0. The WPF user interface is implemented using the MVVM pattern and Caliburn Micro. 
+This is a simple todo list written in C# for the .NET Framework 4.0. The WPF user interface is implemented using the MVVM pattern and Caliburn Micro. This is a demo and not intended for real everyday use. 
 
 Caliburn Micro is following an convention over configuration approach. Views are automatically located by replacing "ViewModel" with "View" in the view model's class name and namespace. Bindings are automatically established between controls in the view and properties in the view model with the same name. 
 
